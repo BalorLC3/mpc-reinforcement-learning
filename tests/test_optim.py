@@ -457,5 +457,11 @@ class TestRMSprop(unittest.TestCase):
             )
 
 
+class TestMuon(unittest.TestCase):
+    @parameterized.expand(product((0, 0.1), (0, 0.9), (False, True)))
+    def test(self, weight_decay: float, momentum: float):
+        lr = np.random.uniform(1e-4, 1e-3)
+        alpha = np.random.uniform(0.9, 0.99)
+        
 if __name__ == "__main__":
     unittest.main()

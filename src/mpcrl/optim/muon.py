@@ -10,5 +10,20 @@ from .gradient_based_optimizer import GradientBasedOptimizer, LrType
 
 
 class Muon(GradientBasedOptimizer[LrType]):
-    r"""Despite of a sophisticated orthogonalization step Muon is
-    indeed a first-order gradient based optimizer, based on :cite:``"""
+    r"""Despite of a sophisticated orthogonalization step Muon is indeed a
+    first-order gradient based optimizer, based on :cite: ``"""
+
+    def __init__(
+            self,
+            learning_rate: Union[LrType, Scheduler[LrType]],
+
+    ) -> None:
+        super().__init__(learning_rate)
+        ...
+
+
+def _muon(
+        step: int,
+        g: np.ndarray,
+):
+    ...
